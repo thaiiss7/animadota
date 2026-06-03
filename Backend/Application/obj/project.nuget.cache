@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UP/rISkmB5w=",
+  "dgSpecHash": "LxD13vQKROI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MIT1CT\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\MIT1CT\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\MIT1CT\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
+  ],
   "logs": []
 }
