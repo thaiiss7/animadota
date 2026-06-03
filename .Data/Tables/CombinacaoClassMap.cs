@@ -11,6 +11,7 @@ public static class CombinacaoClassMap
         builder.ToTable("tb_combinacao");
 
     //================PROPERTIES================
+    
         builder.Property(combinacao => combinacao.Aceito)
             .HasColumnName("aceito")
             .IsRequired();
