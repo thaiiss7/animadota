@@ -1,0 +1,26 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Back
+    
+    ports:
+      - 4000:8080
+
+    env_file:
+      - .env
+
+  db:
+    image: mysql:8.0
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=Animadota
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=42837*498
+
+    volumes:
+      - Animadota:/var/lib/mysql
+
+volumes:
+  Animadota:
