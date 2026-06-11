@@ -5,14 +5,25 @@ namespace Animadota.Infrastructure.Context;
 
 public class SeedService
 {
-    private string nomeUsuario = "usuario";
+    private string username = "user";
+    private string name = "usuario";
     private string nomeOng = "ong";
     public async Task SeedData()
     {
-        var usuario = ctx.Usuarios.Where(u => u.Nome == nomeUsuario).FirstOrDefault();
+        var usuario = ctx.Usuarios.Where(u => u.Username == username).FirstOrDefault();
         if(usuario == null)
         {
-            usuario = new Usuario{Nome=nomeUsuario, Descricao="Casa grande, quintal e dois filhos"};
+            usuario = new Usuario{
+                Nome=name, 
+                Username=username, 
+                Senha="12345",
+                Descricao="Casa grande, quintal e dois filhos",
+                Idade=10,
+                Bio="Bio do usuário",
+                Cidade="Curitiba",
+                Endereco="Rua das flores, 123",
+                Residencia="Casa",
+                Telefone="(41) 99999-9999",};
             ctx.Usuarios.Add(usuario);
             await ctx.SaveChangesAsync();
         }
@@ -58,10 +69,6 @@ public class SeedService
 
 
 
-
-
-
-
     private readonly HttpClient httpClient;
     private readonly AnimadotaContext ctx;
     public SeedService(HttpClient httpClient, AnimadotaContext ctx)
@@ -69,22 +76,22 @@ public class SeedService
         this.httpClient = httpClient;
         this.ctx = ctx;
 
-        racas["raposa"] = GetRandomFoxImage;
+        racas[TipoPetEnum.Raposa] = GetRandomFoxImage;
     }
 
-    private Dictionary<string, Func<Task<string>>> racas =
-        new Dictionary<string, Func<Task<string>>>
+    private Dictionary<TipoPetEnum, Func<Task<string>>> racas =
+        new Dictionary<TipoPetEnum, Func<Task<string>>>
     {
         {
-            "pato",
+            TipoPetEnum.Pato,
             () => Task.FromResult("https://random-d.uk/api/randomimg")
         },
         {
-            "gato",
+            TipoPetEnum.Gato,
             () => Task.FromResult("https://cataas.com/cat")
         },
         {
-            "cachorro",
+            TipoPetEnum.Cachorro,
             () => Task.FromResult("https://placedog.net/800/600?random")
         }
     };
@@ -100,9 +107,9 @@ public class SeedService
             GenAnimal animal = new GenAnimal
             (
                 await GetRandomName(),
-                await racas[tipo].Invoke(),
                 "Vira lata",
-                tipo
+                tipo,
+                await racas[tipo].Invoke()
             );
             list.Add(animal);
         }
@@ -159,6 +166,6 @@ public record GenAnimal
 (
     string Nome,
     string Raca,
-    string Tipo,
+    TipoPetEnum Tipo,
     string Imagem
 );
