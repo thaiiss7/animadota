@@ -1,0 +1,16 @@
+FROM node:25-alpine
+
+WORKDIR /animadota
+
+ENV HTTP_PROXY="http://host.docker.internal:3128"
+ENV HTTPS_PROXY="http://host.docker.internal:3128"
+
+COPY ./frontend/package.json ./
+
+RUN npm install
+
+COPY ./frontend ./
+
+CMD [ "npm", "run", "dev" ]
+
+EXPOSE 3000
