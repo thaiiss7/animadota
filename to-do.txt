@@ -1,0 +1,9 @@
+use cases:
+* criar user
+* criar ong
+* criar pet
+* get pet
+* get user
+* editar user
+* curtir pet
+* aprovar user
