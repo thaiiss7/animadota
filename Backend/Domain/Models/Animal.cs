@@ -2,7 +2,7 @@ public class Animal : BaseModel
 {
     //================PROPERTIES================
     public required string Nome {get;set;}
-    public required string Tipo {get;set;}
+    public required TipoPetEnum Tipo {get;set;}
     public required string Raca {get;set;}
 
 
