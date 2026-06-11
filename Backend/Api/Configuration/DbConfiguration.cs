@@ -14,8 +14,9 @@ public static class DbConfiguration
             var user = Environment.GetEnvironmentVariable("DB_USER");
             var pass = Environment.GetEnvironmentVariable("DB_PASS");
             
-            var conn = $"Server={host};Port={port};Database={dtbs};Uid={user};Pwd={pass};";
-            options.UseMySql(conn, new MySqlServerVersion(new Version(8, 0, 0)));
+            // var conn = $"Server={host};Port={port};Database={dtbs};Uid={user};Pwd={pass};";
+            var mybd = Environment.GetEnvironmentVariable("SQL_CONNECTION");
+            options.UseSqlServer(mybd);
         });
     }
 }

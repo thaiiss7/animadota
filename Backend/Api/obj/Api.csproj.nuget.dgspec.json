@@ -1,37 +1,42 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj": {}
+    "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj": {
+    "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
+        "projectUniqueName": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
-        "packagesPath": "C:\\Users\\BUL2CT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Api\\obj\\",
+        "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
+        "packagesPath": "C:\\Users\\MIT1CT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\BUL2CT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\MIT1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
-            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj"
+              "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj"
               },
-              "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -46,16 +51,19 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.27, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[10.0.9, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -81,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -499,31 +507,36 @@
         }
       }
     },
-    "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj": {
+    "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\BUL2CT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Application\\obj\\",
+        "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\MIT1CT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\BUL2CT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\MIT1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
-            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj"
+              "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj"
               }
             }
           }
@@ -538,11 +551,10 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "imports": [
             "net461",
@@ -560,7 +572,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -838,27 +850,32 @@
         }
       }
     },
-    "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj": {
+    "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\BUL2CT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\MIT1CT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\BUL2CT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\MIT1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
-            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -873,11 +890,10 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "imports": [
             "net461",
@@ -895,7 +911,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1173,34 +1189,39 @@
         }
       }
     },
-    "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\BUL2CT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\MIT1CT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\BUL2CT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\MIT1CT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
-            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj"
+              "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Application\\Application.csproj"
               },
-              "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\BUL2CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj"
+              "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Domain\\Domain.csproj"
               }
             }
           }
@@ -1215,11 +1236,10 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Pomelo.EntityFrameworkCore.MySql": {
@@ -1243,7 +1263,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
