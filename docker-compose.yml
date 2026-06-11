@@ -1,0 +1,13 @@
+services:
+  ui:
+    ports:
+      - 2000:3000
+    
+    build:
+      dockerfile: Front
+      context: .
+
+    environment:
+      - API_PORT=3000
+      - API_HOST=db
+      - API_ENDPOINT=animadota
