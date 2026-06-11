@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0kGcOvwB8PY=",
+  "dgSpecHash": "8gPqRq9OzzU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
+  "projectFilePath": "c:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MIT1CT\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\MIT1CT\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -45,9 +45,9 @@
       "code": "NU1608",
       "level": "Warning",
       "message": "Detected package version outside of dependency constraint: Pomelo.EntityFrameworkCore.MySql 9.0.0 requires Microsoft.EntityFrameworkCore.Relational (>= 9.0.0 && <= 9.0.999) but version Microsoft.EntityFrameworkCore.Relational 10.0.9 was resolved.",
-      "projectPath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
+      "projectPath": "c:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
+      "filePath": "c:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Api\\Api.csproj",
       "libraryId": "Microsoft.EntityFrameworkCore.Relational",
       "targetGraphs": [
         "net10.0"

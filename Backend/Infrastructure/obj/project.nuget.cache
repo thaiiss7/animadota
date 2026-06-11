@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o4mfMxYbDko=",
+  "dgSpecHash": "w8ZpSCIxRjU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "c:\\Users\\MIT1CT\\Desktop\\animadota\\Backend\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MIT1CT\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.0\\microsoft.entityframeworkcore.9.0.0.nupkg.sha512",
     "C:\\Users\\MIT1CT\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.0\\microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",

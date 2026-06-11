@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:10.0
+FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine AS build
 
 WORKDIR /animadota
 
@@ -12,10 +12,17 @@ COPY ./Backend/Application/Application.csproj ./Application/
 COPY ./Backend/Domain/Domain.csproj ./Domain/
 COPY ./Backend/Infrastructure/Infrastructure.csproj ./Infrastructure/
 
-RUN dotnet restore
+RUN dotnet restore --no-launch-profile
 
 COPY ./Backend/ .
 
-CMD [ "dotnet", "run", "--urls=http://0.0.0.0:8080", "--project", "./Api" ]
+RUN dotnet publish -c Release -o /Backend
+
+FROM mcr.microsoft.com/dotnet/sdk:10.0-alpine
+
+WORKDIR /animadota
+
+# CMD [ "dotnet", "run", "--urls=http://0.0.0.0:8080", "--project", "./Api" ]
+ENTRYPOINT [ "dotnet", "Api.dll" ]
 
 EXPOSE 8080
