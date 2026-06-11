@@ -1,5 +1,5 @@
-import { Header } from "../components/header"
-import { PetCards } from "../components/PetCards"
+import { Header } from "../components/Header"
+import { SideBar } from "../components/SideBar"
 
 export const UserPage = () => {
 
@@ -8,22 +8,23 @@ export const UserPage = () => {
             <main className="w-full h-screen">
                 <Header/>
 
-              <div className="w-full flex">
-                {/* Sidebar */}
-                <div className="w-[8%] h-[calc(100vh-72px)] bg-gray-700 text-white flex flex-col items-center">
+                <div className="w-full flex">
 
-                    <section className="flex flex-col mt-5 gap-8">
-                        <img src=".\images\user-icon.png" alt="" className="w-10"/>
-                        <img src=".\images\heart.png" alt="" className="w-10"/>
+                    <SideBar/>
+
+                    {/* Conteúdo */}
+                    <section className="flex-1 flex items-center justify-center bg-gray-700 gap-30">
+
+                        <section className="w-[35%] h-[80%] bg-white">
+
+                        </section>
+
+                        <section className="w-[35%] h-[80%] bg-[#21528A]">
+
+                        </section>
+                       
                     </section>
-
                 </div>
-
-                {/* Conteúdo */}
-                <section className="flex-1 flex items-center justify-center bg-gray-700">
-                    <PetCards />
-                </section>
-            </div>
 
             </main>
 
