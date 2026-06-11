@@ -1,4 +1,8 @@
 using System.Net.Http.Json;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Animadota.Infrastructure.Context;
+
 public class SeedService
 {
     private string nomeUsuario = "usuario";
@@ -46,6 +50,8 @@ public class SeedService
         }
     }
 
+    public void AddHttpClient(IServiceCollection services){}
+
 
 
 
@@ -57,8 +63,8 @@ public class SeedService
 
 
     private readonly HttpClient httpClient;
-    private readonly Context ctx;
-    public SeedService(HttpClient httpClient, Context ctx)
+    private readonly AnimadotaContext ctx;
+    public SeedService(HttpClient httpClient, AnimadotaContext ctx)
     {
         this.httpClient = httpClient;
         this.ctx = ctx;

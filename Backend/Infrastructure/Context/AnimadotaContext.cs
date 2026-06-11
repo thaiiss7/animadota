@@ -1,7 +1,9 @@
 using System.Reflection.Metadata;
 using Microsoft.EntityFrameworkCore;
 
-public class Context(DbContextOptions<Context> ctx) : DbContext(ctx)
+namespace Animadota.Infrastructure.Context;
+
+public class AnimadotaContext(DbContextOptions<AnimadotaContext> ctx) : DbContext(ctx)
 {
     public DbSet<Animal> Animais {get;set;}
     public DbSet<AnimalFoto> AnimalFotos {get;set;}

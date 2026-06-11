@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 public static class UseCaseConfiguration
 {
     public static void AddUseCases(this IServiceCollection services)
