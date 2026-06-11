@@ -3,6 +3,8 @@ import { useState } from "react"
 
 import { Header } from "../components/Header"
 import { SideBar } from "../components/SideBar"
+import { EditProfile } from "../components/EditProfile"
+
 
 import userbase from "../assets/user-base.jpg"
 
@@ -16,6 +18,9 @@ import casa3 from "../assets/foto-casa3.jpg"
 const fotos = [casa1, casa2, casa3]
 
 export const UserPage = () => {
+
+    const [modalAberto, setModalAberto] = useState(false);
+
     const [indice, setIndice] = useState(0);
 
     const proximo = () => {
@@ -33,6 +38,11 @@ export const UserPage = () => {
                 <div className="w-full flex">
 
                     <SideBar/>
+
+                    <EditProfile
+                        aberto={modalAberto}
+                        fechar={() => setModalAberto(false)}
+                    />
 
                     {/* Conteúdo */}
                     <section className="flex-1 flex items-center justify-center gap-30 text-white">
@@ -66,7 +76,9 @@ export const UserPage = () => {
                                 </section>
 
                                 <section className=" flex flex-col text-2xl items-center">
-                                    <button className="bg-[#183b64] w-[50%] p-2 rounded-2xl">Editar Informações</button>
+                                    <button className="bg-[#183b64] w-[50%] p-2 rounded-2xl" onClick={() => setModalAberto(true)}>
+                                        Editar Informações
+                                    </button>
                                 </section>
                             </div>
 
