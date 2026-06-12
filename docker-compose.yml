@@ -14,13 +14,11 @@ services:
     image: mcr.microsoft.com/mssql/server:2022-latest
 
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=Animadota
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=42837*498
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "senha134hfhs99!"
 
     volumes:
-      - Animadota:/var/lib/mysql
+      - Animadota:/var/opt/mssql
 
 volumes:
   Animadota:
