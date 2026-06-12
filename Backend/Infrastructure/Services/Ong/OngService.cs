@@ -5,6 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 public class OngService(AnimadotaContext context) : IOngService
 {
+    public async Task<string> Create(Ong ong)
+    {
+        context.Ongs.Add(ong);
+        await context.SaveChangesAsync();
+        return ong.Nome;
+    }
+
     public Task<Ong?> GetOngByName(string name)
     {
         return context.Ongs.FirstOrDefaultAsync(ong => ong.Nome == name);
@@ -31,8 +38,4 @@ public class OngService(AnimadotaContext context) : IOngService
         context.Ongs.Remove(ong);
         await context.SaveChangesAsync();
     }
-
-
-
-
 }

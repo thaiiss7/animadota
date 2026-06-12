@@ -1,5 +1,5 @@
 use cases:
-* criar user
+* criar user - feito
 * criar ong
 * criar pet
 * get pet
