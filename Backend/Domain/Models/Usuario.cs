@@ -5,7 +5,6 @@ public class Usuario : BaseModel
 {
     //================PROPERTIES================
     public required string Nome {get;set;}
-    public required string Descricao {get;set;}
     public required string Username {get;set;}
     public required string Senha {get;set;}
     public required string Cidade {get;set;}

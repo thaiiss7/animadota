@@ -14,9 +14,6 @@ public static class UsuarioClassMap
         builder.Property(usuario => usuario.Nome)
             .HasColumnName("nome")
             .IsRequired();
-        builder.Property(usuario => usuario.Descricao)
-            .HasColumnName("descricao")
-            .IsRequired();
 
     //================RELATIONS================
         builder.HasMany(usuario => usuario.Fotos)

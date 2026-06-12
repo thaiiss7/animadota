@@ -17,12 +17,11 @@ public class SeedService
                 Nome=name, 
                 Username=username, 
                 Senha="12345",
-                Descricao="Casa grande, quintal e dois filhos",
                 Idade=10,
                 Bio="Bio do usuário",
                 Cidade="Curitiba",
                 Endereco="Rua das flores, 123",
-                Residencia="Casa",
+                Residencia="Casa grande, quintal e dois filhos",
                 Telefone="(41) 99999-9999",};
             ctx.Usuarios.Add(usuario);
             await ctx.SaveChangesAsync();
