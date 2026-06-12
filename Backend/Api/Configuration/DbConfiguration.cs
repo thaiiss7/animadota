@@ -1,6 +1,5 @@
 using Animadota.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 public static class DbConfiguration
 {

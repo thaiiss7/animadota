@@ -1,4 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
 using Animadota.Infrastructure.Context;
 
 public static class ServiceConfiguration

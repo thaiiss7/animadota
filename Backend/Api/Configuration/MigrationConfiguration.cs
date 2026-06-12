@@ -1,6 +1,5 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Animadota.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 
 public static class MigrationConfiguration
 {
