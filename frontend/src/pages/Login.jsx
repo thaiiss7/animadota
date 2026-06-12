@@ -12,7 +12,7 @@ export const Login = () => {
 
             <main className="flex items-center justify-center bg-blue-200 w-full h-screen">
 
-                <div className="w-[30%] h-[70%] bg-[#21528A] rounded-2xl flex flex-col items-center justify-center text-white">
+                <div className="w-[25%] h-[60%] bg-[#21528A] rounded-2xl flex flex-col items-center justify-center text-white">
                     {isLogin ? <LoginModal /> : <RegisterModal />}
 
                     <h1>
