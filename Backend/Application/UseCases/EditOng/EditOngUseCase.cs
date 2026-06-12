@@ -1,12 +1,16 @@
 namespace Animadota.UseCases.EditOng;
 using Animadota.Services.Ongs;
+using Animadota.Results;
 
 public class EditOngUseCase (
     IOngService ongService
 )
 {
-    public Task<EditOngResponse> EditOng(EditOngPayload payload)
+    public async Task<Result<EditOngResponse>> Do(EditOngPayload payload)
     {
-        var ong = 
+        var ong = await ongService.EditOng(payload.Name, payload);
+        if (ong == null)
+            return Result<EditOngResponse>.Fail("Ong não encontrada");
+        return Result<EditOngResponse>.Ok(new EditOngResponse(ong));
     }
 }
