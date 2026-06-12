@@ -1,5 +1,5 @@
-import like from "../assets/circle-heart.png"
-import cancel from "../assets/cancel.png"
+import like from "../assets/confirm swipe.png"
+import cancel from "../assets/cancel swipe.png"
 
 export const PetCards = ({ pet, proxPet, direcao }) => {
   return (
@@ -20,22 +20,19 @@ export const PetCards = ({ pet, proxPet, direcao }) => {
       `}
     >
 
-    {/* Imagem */}
       <img
         src={pet.imagem}
         alt=""
         className="w-full h-full object-cover"
       />
 
-      {/* Gradiente */}
       <div className="absolute inset-0 pointer-events-none bg-linear-to-b from-transparent to-[#143253]" />
 
-      {/* Texto */}
-      <div className="absolute bottom-10 left-4 w-[90%] flex flex-col justify-center items-center text-white">
+      <div className="absolute bottom-10 left-4 w-[90%] flex flex-col justify-center items-center text-white text-left">
 
         <h1 className="text-xl font-bold flex self-start"> {pet.nome} </h1>
         
-        <p>
+        <p className="self-start">
           {pet.descricao}
         </p>
 

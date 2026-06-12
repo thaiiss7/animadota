@@ -7,14 +7,12 @@ import { EditProfile } from "../components/EditProfile"
 
 
 import userbase from "../assets/user-base.jpg"
-
 import left from "../assets/left.png"
 import right from "../assets/right.png"
 
 import casa1 from "../assets/foto-casa.jpg"
 import casa2 from "../assets/foto-casa2.jpg"
 import casa3 from "../assets/foto-casa3.jpg"
-
 const fotos = [casa1, casa2, casa3]
 
 export const UserPage = () => {
@@ -32,7 +30,7 @@ export const UserPage = () => {
 
     return (
         <>
-            <main className="w-full h-screen">
+            <main className="w-full h-screen bg-blue-100">
                 <Header/>
 
                 <div className="w-full flex">
@@ -42,12 +40,22 @@ export const UserPage = () => {
                     <EditProfile
                         aberto={modalAberto}
                         fechar={() => setModalAberto(false)}
+                            img={userbase}
+                            casa={fotos}
+                            nome="The 67th aura farming"
+                            email="aurafarming@gmail.com"
+                            tel="(41) 91234-6789"
+                            tp_residencia="The Beta House"
+                            endereco="Rua Francisco Alfão 67"
+                            bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque molestias similique fugiat, adipisci sit animi!numquam, laboriosam voluptates vero optio dignissimos dolorum at mollitia exercitationem consequuntur, architecto et non."
+                            preferencia={["BluePill", "Beta"]}
                     />
 
                     {/* Conteúdo */}
                     <section className="flex-1 flex items-center justify-center gap-30 text-white">
 
-                        <section className="w-[35%] h-[80%] bg-[#21528A] rounded-3xl flex flex-col">
+                        {/* Primeiro card */}
+                        <section className="w-[35%] h-[80%] bg-[#21528A] rounded-3xl flex flex-col transition-all duration-300 hover:shadow-[0_0_50px_rgba(33,82,138,1)]">
 
                             <div className="w-full p-10 flex flex-col gap-8">
 
@@ -82,11 +90,11 @@ export const UserPage = () => {
                                 </section>
                             </div>
 
-                            
 
                         </section>
 
-                        <section className="w-[35%] h-[80%] bg-[#21528A] rounded-3xl p-10">
+                        {/* Segundo card */}
+                        <section className="w-[35%] h-[80%] bg-[#21528A] rounded-3xl p-10 transition-all duration-300 hover:shadow-[0_0_50px_rgba(33,82,138,1)]">
 
                            <section className="p-10 flex items-center justify-around gap-5 h-75 w-full">
 
