@@ -1,8 +1,6 @@
-using Animadota.Infrastructure.Context;
-
 namespace Animadota.UseCases.CreateUser;
 
-public class CreateUserUseCase(AnimadotaContext ctx)
+public class CreateUserUseCase()
 {
-    public async Task<Result>
+    
 }
