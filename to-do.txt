@@ -5,11 +5,10 @@ use cases:
 * get pet
 * get user
 * editar user
+
 * editar ong
 * curtir pet
 * aprovar user
-
 * delete user
 * delete ong
 * delete pet
-
