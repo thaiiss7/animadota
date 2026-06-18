@@ -1,5 +1,7 @@
 namespace Animadota.Services.Pets;
 using Animadota.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
+
 public class PetService(AnimadotaContext ctx) : IPetService
 {
     public async Task<Guid> Create(Animal pet)
@@ -7,6 +9,13 @@ public class PetService(AnimadotaContext ctx) : IPetService
         ctx.Animais.Add(pet);
         await ctx.SaveChangesAsync();
         return pet.Id;
+    }
+
+    public async Task<Ong?> GetOngByPet(Animal pet)
+    {
+        var ong = await ctx.Ongs
+        .FirstOrDefaultAsync(o => o.Id == pet.OngId);
+        return ong;
     }
 
     public async Task<Animal?> GetPetById(Guid id)

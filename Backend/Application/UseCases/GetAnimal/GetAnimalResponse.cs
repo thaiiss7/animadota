@@ -7,11 +7,6 @@ public record GetAnimalResponse
     string Raca,
     int Idade,
     string Bio,
-    GetOngData Ong
-);
-
-public record GetOngData
-(
-    string Nome,
-    string Endereco
+    string NomeOng,
+    string EnderecoOng
 );
