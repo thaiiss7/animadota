@@ -6,5 +6,5 @@ public class UsuarioFoto : BaseModel
 
     //================MY-RELATIONS================
     public required Usuario Usuario {get;set;}
-    public required int UsuarioId {get;set;}
+    public required Guid UsuarioId {get;set;}
 }

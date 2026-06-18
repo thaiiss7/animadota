@@ -1,3 +1,5 @@
 namespace Animadota.UseCases.EditOng;
 
-public record EditOngResponse();
+public record EditOngResponse(
+    Ong ong
+);
