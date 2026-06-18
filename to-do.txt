@@ -12,3 +12,11 @@ use cases:
 * delete user - feito
 * delete ong - feito
 * delete pet - feito
+
+- ultimo dia:
+* fazer usecases das fotos
+* adicionar urls e listas no usecases já feitos
+* auth
+* hash
+* endpoints
+* conectar front
