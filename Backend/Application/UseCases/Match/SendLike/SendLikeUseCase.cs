@@ -11,6 +11,6 @@ public class SendLikeUseCase(
         if (combinacao == null)
             return Result<SendLikeResponse>.Fail("Erro ao criar combinação");
         
-        return Result<SendLikeResponse>.Success(new SendLikeResponse(combinacao));
+        return Result<SendLikeResponse>.Success(new(combinacao.Id));
     }
 }
