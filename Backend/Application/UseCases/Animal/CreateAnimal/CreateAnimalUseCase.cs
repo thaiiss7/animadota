@@ -15,7 +15,9 @@ public class CreateAnimalUseCase
             Nome = payload.Nome,
             Tipo = payload.Tipo,
             Raca = payload.Raca,
-            OngId = payload.OngId
+            OngId = payload.OngId,
+            Bio = payload.Bio,
+            Idade = payload.Idade
         };
 
         await petService.Create(pet);

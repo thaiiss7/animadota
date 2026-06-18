@@ -5,7 +5,7 @@ public class Animal : BaseModel
     public required string Nome {get;set;}
     public required TipoPetEnum Tipo {get;set;}
     public required string Raca {get;set;}
-    public required string Descricao {get;set;}
+    public required string Bio {get;set;}
     public required int Idade {get;set;}
     public required string Bio { get; set; }
 

@@ -1,41 +1,46 @@
-using Animadota.Infrastructure.Context;
-using Animadota.Services.Ongs;
-using Animadota.UseCases.EditOng;
-using Microsoft.EntityFrameworkCore;
+// using Animadota.Infrastructure.Context;
+// using Animadota.Services.Ongs;
+// using Animadota.UseCases.EditOng;
+// using Microsoft.EntityFrameworkCore;
 
-public class OngService(AnimadotaContext context) : IOngService
-{
-    public async Task<string> Create(Ong ong)
-    {
-        context.Ongs.Add(ong);
-        await context.SaveChangesAsync();
-        return ong.Nome;
-    }
+// public class OngService(AnimadotaContext context) : IOngService
+// {
+//     public async Task<Guid> Create(Ong ong)
+//     {
+//         context.Ongs.Add(ong);
+//         await context.SaveChangesAsync();
+//         return ong.Id;
+//     }
 
-    public Task<Ong?> GetOngByName(string name)
-    {
-        return context.Ongs.FirstOrDefaultAsync(ong => ong.Nome == name);
-    }
+//     public Task<Ong?> GetOngByName(string name)
+//     {
+//         return context.Ongs.FirstOrDefaultAsync(ong => ong.Nome == name);
+//     }
 
-    public async Task<Ong?> EditOng(string name, EditOngPayload payload)
-    {
-        var ong = await GetOngByName(name);
-        if (ong == null)
-            return null;
+//     public async Task<Ong?> EditOng(string name, EditOngPayload payload)
+//     {
+//         var ong = await GetOngByName(name);
+//         if (ong == null)
+//             return null;
         
-        ong.Nome = payload.Name;
-        context.Ongs.Update(ong);
-        await context.SaveChangesAsync();
-        return ong;
-    }
+//         ong.Nome = payload.Name;
+//         context.Ongs.Update(ong);
+//         await context.SaveChangesAsync();
+//         return ong;
+//     }
 
-    public async Task DeleteOng(string name)
-    {
-        var ong = await GetOngByName(name);
-        if (ong == null)
-            return;
+//     public async Task DeleteOng(string name)
+//     {
+//         var ong = await GetOngByName(name);
+//         if (ong == null)
+//             return;
         
-        context.Ongs.Remove(ong);
-        await context.SaveChangesAsync();
-    }
-}
+//         context.Ongs.Remove(ong);
+//         await context.SaveChangesAsync();
+//     }
+
+//     public Task DeclineMatch(Guid matchId)
+//     {
+//         var match = 
+//     }
+// }
