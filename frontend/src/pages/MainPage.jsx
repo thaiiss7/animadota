@@ -13,22 +13,38 @@ const pets = [
     {
         imagem: dog1,
         nome: "Pirulito",
-        descricao: "cachorro que come pirulito pirimpimpim muito carinhoso manhoso e engraçado"
+        descricao: "Cachorro que come pirulito pirimpimpim muito carinhoso manhoso e engraçado",
+        tipo: "Cachorro",
+        raca: "pirulito",
+        ong: "Save",
+        endereco: "Corpus Crist"
     },
     {
         imagem: dog2,
         nome: "Dog Marley",
-        descricao: "cachorro relaxado estilo bob marley"
+        descricao: "cachorro relaxado estilo bob marley",
+        tipo: "Cachorro",
+        raca: "Maconha",
+        ong: "Omg",
+        endereco: "Damn"
     },
     {
         imagem: dog3,
         nome: "Botudo",
-        descricao: "cachorro engraçado e estiloso"
+        descricao: "cachorro engraçado e estiloso",
+        tipo: "Cachorro",
+        raca: "bota",
+        ong: "Botina",
+        endereco: "CIC"
     },
     {
         imagem: dog4,
         nome: "Doginstein",
-        descricao: "cachorro genial e divertido"
+        descricao: "cachorro genial e divertido",
+        tipo: "Cachorro",
+        raca: "inteligente",
+        ong: "Genio",
+        endereco: "Av. Platao"
     }
 ]
 

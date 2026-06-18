@@ -1,21 +1,21 @@
 import { useState } from "react";
-
 import { LoginModal } from "../components/LoginModal";
 import { RegisterModal } from "../components/RegisterModal";
 
 export const Login = () => {
-
     const [isLogin, setIsLogin] = useState(true);
 
-    return(
-        <>
+    return (
+        <main className="flex items-center justify-center bg-blue-200 w-full h-screen">
+            <div className="w-[40%] h-fit bg-[#21528A] rounded-2xl flex flex-col items-center text-white p-8">
 
-            <main className="flex items-center justify-center bg-blue-200 w-full h-screen">
+                {isLogin ? (
+                    <LoginModal onChangeView={() => setIsLogin(false)} />
+                ) : (
+                    <RegisterModal onChangeView={() => setIsLogin(true)} />
+                )}
 
-                <div className="w-[25%] h-[60%] bg-[#21528A] rounded-2xl flex flex-col items-center justify-center text-white">
-                    {isLogin ? <LoginModal /> : <RegisterModal />}
-
-                    <h1>
+                <h1>
                     {isLogin ? (
                         <>
                             Não possui conta?{" "}
@@ -38,10 +38,8 @@ export const Login = () => {
                         </>
                     )}
                 </h1>
-                </div>
 
-            </main>
-
-        </>
+            </div>
+        </main>
     );
-}
+};

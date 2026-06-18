@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+/* Aqui fica o style do scrool */
+@layer utilities {
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #183b64;
+    border-radius: 999px;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
