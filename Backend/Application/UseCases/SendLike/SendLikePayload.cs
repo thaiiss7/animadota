@@ -1,1 +1,1 @@
-public record SendLikePayload(int UsuarioId, int AnimalId, bool Aceito, bool Gostou);
+public record SendLikePayload(Guid UsuarioId, Guid AnimalId, Usuario Usuario, Animal Animal, bool Aceito, bool Gostou);

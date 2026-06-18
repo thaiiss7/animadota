@@ -29,7 +29,7 @@ public class SeedService
         var ong = ctx.Ongs.Where(o => o.Nome == nomeOng).FirstOrDefault();
         if(ong == null)
         {
-            ong = new Ong{Nome=nomeOng};
+            ong = new Ong{Nome=nomeOng, Endereco="Rua das flores, 123", Telefone="(41) 99999-9999"  };
             ctx.Ongs.Add(ong);
             await ctx.SaveChangesAsync();
         }
@@ -48,6 +48,8 @@ public class SeedService
                     OngId=ong.Id,
                     Raca=a.Raca,
                     Tipo=a.Tipo,
+                    Descricao="Descrição do animal",
+                    Idade=10
                 };
                 var foto = a.Imagem;
 

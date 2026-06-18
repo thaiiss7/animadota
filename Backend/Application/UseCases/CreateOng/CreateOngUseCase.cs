@@ -13,9 +13,12 @@ public class CreateOngUseCase
         var ong = new Ong
         {
             Nome = payload.Nome,
-            Id = payload.Id
+            Id = payload.Id,
+            Endereco = payload.Endereco,
+            Telefone = payload.Telefone
         };
-
+        
+        await ongService.Create(ong);
         return Result<CreateOngResponse>.Success(new(ong.Nome));
     }
 }
