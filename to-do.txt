@@ -6,9 +6,9 @@ use cases:
 * get user
 * editar user
 
-* editar ong
-* curtir pet
-* aprovar user
-* delete user
-* delete ong
+* editar ong 
+* curtir pet X
+* aprovar user X
+* delete user X 
+* delete ong X 
 * delete pet
