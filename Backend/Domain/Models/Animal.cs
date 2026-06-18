@@ -7,7 +7,7 @@ public class Animal : BaseModel
     public required string Raca {get;set;}
 
     //================MY-RELATIONS================
-    public required Ong Ong {get;set;}
+    public Ong Ong {get;set;}
     public required Guid OngId {get;set;}
 
     //================RELATIONS================
