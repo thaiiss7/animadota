@@ -1,3 +1,4 @@
+
 public class Animal : BaseModel
 {
     //================PROPERTIES================
@@ -5,10 +6,9 @@ public class Animal : BaseModel
     public required TipoPetEnum Tipo {get;set;}
     public required string Raca {get;set;}
 
-
     //================MY-RELATIONS================
-    public Ong Ong {get;set;}
-    public required int OngId {get;set;}
+    public required Ong Ong {get;set;}
+    public required Guid OngId {get;set;}
 
     //================RELATIONS================
     public ICollection<AnimalFoto> Fotos {get;set;} = [];

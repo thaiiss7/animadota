@@ -11,6 +11,6 @@ public class EditOngUseCase (
         var ong = await ongService.EditOng(payload.Name, payload);
         if (ong == null)
             return Result<EditOngResponse>.Fail("Ong não encontrada");
-        return Result<EditOngResponse>.Ok(new EditOngResponse(ong));
+        return Result<EditOngResponse>.Success(new EditOngResponse(ong));
     }
 }

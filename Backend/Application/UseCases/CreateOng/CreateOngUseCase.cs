@@ -12,7 +12,8 @@ public class CreateOngUseCase
     {
         var ong = new Ong
         {
-            Nome = payload.Nome
+            Nome = payload.Nome,
+            Id = payload.Id
         };
 
         return Result<CreateOngResponse>.Success(new(ong.Nome));

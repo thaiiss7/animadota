@@ -7,7 +7,7 @@ public class Combinacao : BaseModel
 
     //================MY-RELATIONS================
     public required Usuario Usuario {get;set;}
-    public required int UsuarioId {get;set;}
+    public required Guid UsuarioId {get;set;}
     public required Animal Animal {get;set;}
-    public required int AnimalId {get;set;}
+    public required Guid AnimalId {get;set;}
 }
