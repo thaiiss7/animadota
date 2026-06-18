@@ -1,7 +1,7 @@
 use cases:
 * criar user - feito
 * criar ong - feito
-* criar pet
+* criar pet - feito
 * get pet
 * get user
 * editar user
