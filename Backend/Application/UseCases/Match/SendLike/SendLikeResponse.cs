@@ -1,3 +1,3 @@
 public record SendLikeResponse(
-    Combinacao combinacao
+    Guid Id
 );

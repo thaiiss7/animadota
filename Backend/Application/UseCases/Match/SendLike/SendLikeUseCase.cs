@@ -10,6 +10,7 @@ public class SendLikeUseCase(
         var combinacao = await combinacaoService.CreateCombinacao(payload);
         if (combinacao == null)
             return Result<SendLikeResponse>.Fail("Erro ao criar combinação");
+        
         return Result<SendLikeResponse>.Success(new SendLikeResponse(combinacao));
     }
 }

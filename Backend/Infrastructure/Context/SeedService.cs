@@ -48,7 +48,7 @@ public class SeedService
                     OngId=ong.Id,
                     Raca=a.Raca,
                     Tipo=a.Tipo,
-                    Descricao="Descrição do animal",
+                    Bio="Descrição do animal",
                     Idade=10
                 };
                 var foto = a.Imagem;

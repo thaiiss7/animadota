@@ -8,8 +8,8 @@ public class GetAnimalUseCase
     IPetService petService
 )
 {
-    public async Task<Result<GetAnimalResponse>> Do(GetAnimalPayload payload)
-    {
+    // public async Task<Result<GetAnimalResponse>> Do(GetAnimalPayload payload)
+    // {
         
-    }
+    // }
 }
