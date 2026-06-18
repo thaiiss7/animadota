@@ -9,6 +9,16 @@ public class PetService(AnimadotaContext ctx) : IPetService
         return pet.Id;
     }
 
+    public async Task<Guid?> Delete(Guid id)
+    {
+        var animal = await GetPetById(id);
+        if (animal == null)
+            return null;
+        ctx.Animais.Remove(animal);
+        await ctx.SaveChangesAsync();
+        return animal.Id;
+    }
+
     public async Task<Animal?> GetPetById(Guid id)
     {
         var animal = await ctx.Animais.FindAsync(id);

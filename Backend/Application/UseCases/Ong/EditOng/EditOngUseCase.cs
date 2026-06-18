@@ -8,7 +8,7 @@ public class EditOngUseCase (
 {
     public async Task<Result<EditOngResponse>> Do(EditOngPayload payload)
     {
-        var ong = await ongService.EditOng(payload.Name, payload);
+        var ong = await ongService.EditOng(payload.Id, payload);
         if (ong == null)
             return Result<EditOngResponse>.Fail("Ong não encontrada");
         return Result<EditOngResponse>.Success(new EditOngResponse(ong));
