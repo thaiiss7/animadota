@@ -2,9 +2,11 @@ namespace Animadota.Services.Pets;
 using Animadota.Infrastructure.Context;
 public class PetService(AnimadotaContext ctx) : IPetService
 {
-    public Task<Animal> Create(Animal pet)
+    public async Task<Guid> Create(Animal pet)
     {
-        throw new NotImplementedException();
+        ctx.Animais.Add(pet);
+        await ctx.SaveChangesAsync();
+        return pet.Id;
     }
 
     public async Task<Animal?> GetPetById(Guid id)
@@ -14,7 +16,4 @@ public class PetService(AnimadotaContext ctx) : IPetService
             return null;
         return animal;
     }
-
-
-
 }
