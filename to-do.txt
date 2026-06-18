@@ -6,7 +6,7 @@ use cases:
 * get user - feito
 * editar user - feito
 
-* editar ong
+* editar ong - feito
 * curtir pet - feito
 * aprovar user - feito
 * delete user - feito
