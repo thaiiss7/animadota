@@ -6,9 +6,11 @@ use cases:
 * get user
 * editar user
 
-* editar ong 
-* curtir pet X
-* aprovar user X
-* delete user X 
-* delete ong X 
-* delete pet
+=======
+* editar ong
+* curtir pet - feito
+* aprovar user - feito
+* delete user - feito
+* delete ong - feito
+* delete pet - feito
+>>>>>>> a250188b3d8d4f7fae07a220945717c32cd2d792

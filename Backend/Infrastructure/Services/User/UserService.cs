@@ -11,6 +11,7 @@ public class UserService(AnimadotaContext ctx) : IUserService
         return user.Username;
     }
 
+<<<<<<< HEAD
     public async Task<Guid?> DeleteUserByUsername(string username)
     {
         var user = await GetUserByUsername(username);
@@ -19,6 +20,12 @@ public class UserService(AnimadotaContext ctx) : IUserService
         ctx.Usuarios.Remove(user);
         await ctx.SaveChangesAsync();
         return user.Id;
+=======
+    public async Task<string> EditUserData(Usuario user)
+    {
+        await ctx.SaveChangesAsync();
+        return user.Username;
+>>>>>>> a250188b3d8d4f7fae07a220945717c32cd2d792
     }
 
     public async Task<Usuario?> GetUserByUsername(Guid id)
