@@ -1,10 +1,8 @@
-// tipo residencia, endereco, bio, preferencia, idade
 import { useState } from "react"
 
 import { Header } from "../components/Header"
 import { SideBar } from "../components/SideBar"
 import { EditProfile } from "../components/EditProfile"
-
 
 import userbase from "../assets/user-base.jpg"
 import left from "../assets/left.png"
@@ -13,122 +11,139 @@ import right from "../assets/right.png"
 import casa1 from "../assets/foto-casa.jpg"
 import casa2 from "../assets/foto-casa2.jpg"
 import casa3 from "../assets/foto-casa3.jpg"
+
 const fotos = [casa1, casa2, casa3]
 
 export const UserPage = () => {
 
-    const [modalAberto, setModalAberto] = useState(false);
-
-    const [indice, setIndice] = useState(0);
+    const [modalAberto, setModalAberto] = useState(false)
+    const [indice, setIndice] = useState(0)
 
     const proximo = () => {
         setIndice((prev) =>
             prev === fotos.length - 1 ? 0 : prev + 1
-        );
+        )
     }
 
-
     return (
-        <>
-            <main className="w-full h-screen bg-blue-100">
-                <Header/>
+        <main className="h-screen w-full flex flex-col bg-blue-100">
 
-                <div className="w-full flex">
+            <Header />
 
-                    <SideBar/>
+            <div className="flex flex-1">
+
+                <SideBar />
+
+                {/* Conteudo */}
+                <div className="flex-1 flex items-center justify-center p-6">
 
                     <EditProfile
                         aberto={modalAberto}
                         fechar={() => setModalAberto(false)}
-                            img={userbase}
-                            casa={fotos}
-                            nome="The 67th aura farming"
-                            email="aurafarming@gmail.com"
-                            tel="(41) 91234-6789"
-                            tp_residencia="The Beta House"
-                            endereco="Rua Francisco Alfão 67"
-                            bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque molestias similique fugiat, adipisci sit animi!numquam, laboriosam voluptates vero optio dignissimos dolorum at mollitia exercitationem consequuntur, architecto et non."
-                            preferencia={["BluePill", "Beta"]}
+                        img={userbase}
+                        casa={fotos}
+                        nome="The 67th aura farming"
+                        email="aurafarming@gmail.com"
+                        tel="(41) 91234-6789"
+                        tp_residencia="The Beta House"
+                        endereco="Rua Francisco Alfão 67"
+                        bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque molestias similique fugiat, adipisci sit animi!"
+                        preferencia={["BluePill", "Beta"]}
                     />
 
-                    {/* Conteúdo */}
-                    <section className="flex-1 flex items-center justify-center gap-30 text-white">
+                    {/* Card */}
+                    <section className="flex gap-10 text-white w-full max-w-6xl items-center justify-center">
 
-                        {/* Primeiro card */}
-                        <section className="w-[35%] h-[80%] bg-[#21528A] rounded-3xl flex flex-col transition-all duration-300 hover:shadow-[0_0_50px_rgba(33,82,138,1)]">
+                        {/* Card Esquerda */}
+                        <section className="w-[45%] h-[70vh] overflow-hidden bg-[#21528A] rounded-3xl flex flex-col hover:shadow-[0_0_50px_rgba(33,82,138,1)] transition-all">
 
-                            <div className="w-full p-10 flex flex-col gap-8">
+                            <div className="p-10 flex flex-col gap-8">
 
-                                <section className="flex w-[50%] gap-5">
+                                {/* informações user */}
+                                <section className="flex gap-5 items-center">
 
-                                    <img src={userbase} alt="" className="h-full"/>
+                                    <img src={userbase} alt="" className="h-30 w-30 rounded-full object-cover" />
 
-                                    <section className="flex flex-col text-2xl text-white gap-2">
-                                        <h1>Nome User - 29</h1>
-                                        <h1 className="text-xl">testeuseremail@gmail.com</h1>
-                                        <h1 className="text-xl">(41) 91234-6789</h1>
-                                        <h1 className="text-xl">Tipo Residência: Casa</h1>
-                                        <h1 className="text-xl">Endereço: Rua francisco beltrao 133</h1>
-                                    </section>
-                                    
-                                </section>
-
-                                <section className=" flex flex-col gap-2 text-2xl">
-                                    <h1>Bio</h1>
-  
-                                    <h1 className="text-xl p-5 bg-[#183b64] rounded-xl">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque molestias similique fugiat, 
-                                        adipisci sit animi! Saepe numquam, laboriosam voluptates vero optio dignissimos dolorum at mollitia exercitationem consequuntur, architecto et non.
-                                    </h1>
+                                    <div className="flex flex-col text-white gap-1">
+                                        <h1 className="text-xl">Nome User - 29</h1>
+                                        <h1 className="text-sm">testeuseremail@gmail.com</h1>
+                                        <h1 className="text-sm">(41) 91234-6789</h1>
+                                        <h1 className="text-sm">Tipo Residência: Casa</h1>
+                                        <h1 className="text-sm">Endereço: Rua Francisco Beltrão 133</h1>
+                                    </div>
 
                                 </section>
 
-                                <section className=" flex flex-col text-2xl items-center">
-                                    <button className="bg-[#183b64] w-[50%] p-2 rounded-2xl" onClick={() => setModalAberto(true)}>
-                                        Editar Informações
-                                    </button>
+                                <section className="flex flex-col gap-2">
+                                    <h1 className="text-xl">Bio</h1>
+
+                                    <p className="text-sm p-8 bg-[#183b64] rounded-xl">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque molestias similique fugiat, adipisci sit animi!
+                                    </p>
+
                                 </section>
+
+                                <button
+                                    className="bg-[#183b64] w-[60%] p-2 rounded-2xl self-center"
+                                    onClick={() => setModalAberto(true)}
+                                >
+                                    Editar Informações
+                                </button>
+
                             </div>
-
 
                         </section>
 
-                        {/* Segundo card */}
-                        <section className="w-[35%] h-[80%] bg-[#21528A] rounded-3xl p-10 transition-all duration-300 hover:shadow-[0_0_50px_rgba(33,82,138,1)]">
+                        {/* Card Direita */}
+                        <section className="w-[45%] h-[70vh] bg-[#21528A] rounded-3xl p-10 flex flex-col justify-between hover:shadow-[0_0_50px_rgba(33,82,138,1)] transition-all">
 
-                           <section className="p-10 flex items-center justify-around gap-5 h-75 w-full">
+                            {/* Fotos da casa */}
+                            <div className="flex items-center justify-between">
 
-                                <img src={left} alt="" onClick={proximo} className="w-8 cursor-pointer" />
+                                <img
+                                    src={left}
+                                    alt=""
+                                    onClick={() =>
+                                        setIndice((prev) =>
+                                            prev === 0 ? fotos.length - 1 : prev - 1
+                                        )
+                                    }
+                                    className="w-8 cursor-pointer"
+                                />
 
                                 <img
                                     src={fotos[indice]}
                                     alt=""
-                                    className="h-full object-cover rounded-xl"
+                                    className="h-64 object-cover rounded-xl"
                                 />
 
-                                <img src={right} alt="" onClick={proximo} className="w-8 cursor-pointer" />
+                                <img
+                                    src={right}
+                                    alt=""
+                                    onClick={proximo}
+                                    className="w-8 cursor-pointer"
+                                />
 
-                            </section>
+                            </div>
 
-                            <section className="text-2xl flex flex-col gap-5">
-                                <h1>Minhas preferências</h1>
+                            {/* Preferencias */}
+                            <div className="text-white">
+                                <h1 className="text-xl mb-3">Minhas preferências</h1>
 
-                                <section>
-                                    <div className="grid grid-cols-2 gap-4 text-center">
-                                        <div className="bg-[#183b64] p-2 rounded-xl">Gato</div>
-                                        <div className="bg-[#183b64] p-2 rounded-xl">Cachorro</div>
-                                    </div>
-                                </section>
-                            </section>
+                                <div className="grid grid-cols-2 gap-4 text-center">
+                                    <div className="bg-[#183b64] p-2 rounded-xl">Gato</div>
+                                    <div className="bg-[#183b64] p-2 rounded-xl">Cachorro</div>
+                                </div>
+                            </div>
 
                         </section>
-                       
+
                     </section>
+
                 </div>
 
-            </main>
+            </div>
 
-        </>
+        </main>
     )
-
 }
