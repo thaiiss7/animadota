@@ -12,8 +12,8 @@ public class DeleteUserUseCase(
         if (user == null)
             return Result<DeleteUserResponse>.Fail("User not found");
 
-        foreach (var photo in user.Fotos)
-            await userPhotoService.Delete(photo.Id);
+        // foreach (var photo in user.Fotos)
+        //     await userPhotoService.Delete(photo.Id);
 
         await userService.DeleteUserByUsername(payload.Username);
         return Result<DeleteUserResponse>.Success(new());
