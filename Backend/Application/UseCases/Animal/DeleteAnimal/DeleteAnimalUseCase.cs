@@ -1,4 +1,4 @@
-using Animadota.Results;
+using Animadota.Common.Results;
 using Animadota.Services.Pets;
 
 public class DeleteAnimalUseCase(

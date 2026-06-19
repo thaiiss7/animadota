@@ -1,10 +1,10 @@
-using Animadota.Results;
+using Animadota.Common.Results;
 using Animadota.Services.AnimalFotos;
 using Animadota.Services.Pets;
 
 namespace Animadota.UseCases.CreatePetPhoto;
 
-public class CreateAnimalFotoUseCase
+public class CreatePetPhotoUseCase
 (
     IPhotoPetService photoPetService,
     IPetService petService

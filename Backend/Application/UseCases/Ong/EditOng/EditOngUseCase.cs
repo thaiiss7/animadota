@@ -1,6 +1,6 @@
 namespace Animadota.UseCases.EditOng;
 using Animadota.Services.Ongs;
-using Animadota.Results;
+using Animadota.Common.Results;
 
 public class EditOngUseCase (
     IOngService ongService

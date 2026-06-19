@@ -1,4 +1,4 @@
-using Animadota.Results;
+using Animadota.Common.Results;
 
 public class CreateUserPhotoUseCase(
     IPhotoUserService photoUserService

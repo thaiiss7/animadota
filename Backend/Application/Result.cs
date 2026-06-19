@@ -1,4 +1,4 @@
-namespace Animadota.Results;
+namespace Animadota.Common.Results;
 
 public record Result<T>(
     T Data,
