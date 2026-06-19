@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import { OngHeader } from "../components/OngHeader";
 import { OngSideBar } from "../components/OngSideBar";
+import { RequestDetails } from "../components/RequestDetails";
+
+
 
 import userbase from "../assets/user-base.jpg"
 
@@ -104,6 +107,27 @@ const pets = [
 export const Request = () => {
 
     const navigate = useNavigate();
+    const [modalAberto, setModalAberto] = useState(false)
+    const [dadosSelecionados, setDadosSelecionados] = useState(null);
+    const [listaRequests, setListaRequests] = useState(requests);
+
+    const alterarStatus = (id, novoStatus) => {
+    setListaRequests((prev) =>
+        prev.map((item) =>
+            item.id === id
+                ? { ...item, status: novoStatus }
+                : item
+        )
+    );
+
+    setDadosSelecionados((prev) => ({
+            ...prev,
+            request: {
+                ...prev.request,
+                status: novoStatus
+            }
+        }));
+    };
 
     return(
         <>
@@ -114,6 +138,13 @@ export const Request = () => {
                     <OngSideBar />
 
                     <section className="flex-1 p-6">
+
+                        <RequestDetails
+                            aberto={modalAberto}
+                            fechar={() => setModalAberto(false)}
+                            dados={dadosSelecionados}
+                            alterarStatus={alterarStatus}
+                        />
 
                         <div className="w-full h-full bg-white rounded-xl p-3">
                             <div className="flex justify-between items-center">
@@ -149,7 +180,7 @@ export const Request = () => {
                                     </thead>
 
                                     <tbody>
-                                        {requests.map((request, index) => {
+                                        {listaRequests.map((request, index) => {
                                             const pet = pets[index];
 
                                             return(
@@ -221,7 +252,17 @@ export const Request = () => {
                                                     </td>
 
                                                     <td className="p-3">
-                                                        <button className="bg-[#21528A] hover:bg-[#1b4574] text-white px-4 py-2 rounded-lg transition">
+                                                        <button
+                                                            className="bg-[#21528A] hover:bg-[#1b4574] text-white px-4 py-2 rounded-lg transition"
+                                                            onClick={() => {
+                                                                setDadosSelecionados({
+                                                                    request,
+                                                                    pet
+                                                                });
+
+                                                                setModalAberto(true);
+                                                            }}
+                                                        >
                                                             Ver
                                                         </button>
                                                     </td>
