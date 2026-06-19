@@ -14,7 +14,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Login/>}/>
-        <Route path="/ong" element={<OngPage/>}/>
+        <Route path="/ong-main" element={<OngPage/>}/>
         <Route path="/main" element={<MainPage />}/>
         <Route path="/user" element={<UserPage />}/>
         <Route path="/likePage" element={<LikePage />}/>

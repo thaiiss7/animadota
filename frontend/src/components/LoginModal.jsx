@@ -10,9 +10,9 @@ export const LoginModal = () => {
 
     const handleLogin = () => {
         if (username === "ong") {
-            navigate("/ong");
+            navigate("/ong-main");
         } else {
-            navigate("/home");
+            navigate("/main");
         }
     };
 
