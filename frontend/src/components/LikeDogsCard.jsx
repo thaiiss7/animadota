@@ -1,83 +1,65 @@
-export const LikeDogsCard = () => {
-    return(
+export const LikeDogsCard = ({ pet }) => {
+    return (
         <>
-    // Codigo JS para escolher o lado para a transição
-    <div className="w-[30%] h-[90%] overflow-hidden rounded-2xl relative transition-all duration-300"
-      >
-        <img src={pet.imagem} alt="" className="w-full h-full object-cover"/>
+            <div className="w-[90%] h-[90%] overflow-hidden rounded-2xl relative transition-all duration-300">
+                
+                <img
+                    src={pet.imagem}
+                    alt={pet.nome}
+                    className="w-full h-full object-cover object-top"
+                />
 
-        {/* degradê */}
-        <div className="absolute inset-0 pointer-events-none bg-linear-to-b from-transparent to-[#143253]" />
+                {/* degradê */}
+                <div className="absolute inset-0 pointer-events-none bg-linear-to-b from-transparent to-[#143253]" />
 
-        <div className="absolute bottom-10 left-4 w-[90%] flex flex-col justify-center items-center text-white text-left">
+                <div className="absolute bottom-10 left-4 w-[90%] flex flex-col justify-end items-start text-white text-left">
 
+                    <section className="w-full gap-2 flex flex-col justify-end">
 
-          <section className="w-full gap-2 flex flex-col">
+                        <div className="flex">
 
-            <section>
-              <h1 className="text-xl font-bold flex self-start"> {pet.nome} </h1>
+                            <section className="mr-2">
+                                <h1 className="text-sm font-bold">
+                                    {pet.nome}
+                                </h1>
+                            </section>
 
-              <p className="self-start w-full">
-                {pet.descricao}
-              </p>
-            </section> 
+                            <section>
+                                <h1 className="text-sm font-bold">
+                                    - {pet.tipo}
+                                </h1>
+                            </section>
 
+                        </div>
 
-            {/* INFORMACOES DO ANIMAL */}
-            <section className="flex justify-between">
+                        {/* info pet */}
+                        <section className="flex justify-between">
 
-              <section className="flex gap-2">
-                <p className="self-start">
-                  Espécie:
-                </p>
+                            <section className="text-sm flex gap-2">
+                                <p>Raça:</p>
+                                <p>{pet.raca}</p>
+                            </section>
 
-                <p className="self-start">
-                  {pet.tipo}
-                </p>
-              </section>
+                        </section>
 
-              <section className="flex gap-2">
-                <p className="self-start">
-                  Raça:
-                </p>
+                        {/* info ong */}
+                        <section className="text-sm flex flex-col gap-2">
 
-                <p className="self-start">
-                  {pet.raca}
-                </p>
-              </section>
+                            <h1 className="font-bold">
+                                Informações da ONG
+                            </h1>
 
-            </section>
+                            <section className="text-sm flex gap-2">
+                                <p>Nome ONG:</p>
+                                <p>{pet.ong}</p>
+                            </section>
 
-            {/* INFORMACOES DA ONG */}
-            <section className="flex flex-col justify-between">
+                        </section>
 
-              <h1 className="font-bold">Informações da ONG</h1>
+                    </section>
 
-              <section className="flex gap-2">
-                <p className="self-start">
-                  Nome Ong:
-                </p>
-
-                <p className="self-start">
-                  {pet.ong}
-                </p>
-              </section>
-
-              <section className="flex gap-2">
-                <p className="self-start">
-                  Endereço Ong:
-                </p>
-
-                <p className="self-start">
-                  {pet.endereco}
-                </p>
-              </section>
-
-            </section>
-          </section>    
-        </div>
-
-    </div>
+                </div>
+            </div>
         </>
     );
-}
+};

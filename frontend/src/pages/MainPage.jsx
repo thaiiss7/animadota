@@ -1,13 +1,14 @@
-import { useState } from "react"
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-import { Header } from "../components/Header"
-import { PetCards } from "../components/PetCards"
-import { SideBar } from "../components/SideBar"
+import { Header } from "../components/Header";
+import { PetCards } from "../components/PetCards";
+import { SideBar } from "../components/SideBar";
 
-import dog1 from "../assets/dog.jpg"
-import dog2 from "../assets/dog2.jpg"
-import dog3 from "../assets/dog3.jpg"
-import dog4 from "../assets/dog4.jpg"
+import dog1 from "../assets/dog.jpg";
+import dog2 from "../assets/dog2.jpg";
+import dog3 from "../assets/dog3.jpg";
+import dog4 from "../assets/dog4.jpg";
 
 const pets = [
     {
@@ -46,16 +47,30 @@ const pets = [
         ong: "Genio",
         endereco: "Av. Platao"
     }
-]
+];
 
 export const MainPage = () => {
 
     const [indice, setIndice] = useState(0);
     const [direcao, setDirecao] = useState("");
+    const [petsCurtidos, setPetsCurtidos] = useState([]);
+
+    // DEBUG: ver curtidos
+    useEffect(() => {
+        console.log("🐶 Pets curtidos:", petsCurtidos);
+    }, [petsCurtidos]);
 
     const proximoPet = (lado) => {
+        console.log("Click:", lado);
+
         setDirecao(lado);
 
+        // adiciona nos curtidos
+        if (lado === "like") {
+            setPetsCurtidos((prev) => [...prev, pets[indice]]);
+        }
+
+        // troca de pet
         setTimeout(() => {
             setIndice((prev) =>
                 prev === pets.length - 1 ? 0 : prev + 1
@@ -74,7 +89,6 @@ export const MainPage = () => {
 
                 <SideBar />
 
-                {/* Conteúdo */}
                 <section className="flex-1 flex items-center justify-center bg-blue-100">
 
                     <PetCards
@@ -88,5 +102,5 @@ export const MainPage = () => {
             </div>
 
         </main>
-    )
-}
+    );
+};
