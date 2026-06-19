@@ -45,25 +45,34 @@ public static class OngEndpoints
         ).RequireAuthorization();
 
         app.MapPut("ong/{id}", async (
-            Guid id,
+            Guid OngId,
             [FromBody] EditOngPayload payload,
-            [FromServices] EditOngUseCase service) =>
+            [FromServices] EditOngUseCase service,
+            HttpContext http) =>
         {
-            var result = await service.Do(id, payload);
+            var username = http.User.FindFirst("username")?.Value;
+            var id = http.User.FindFirst("id")?.Value;
+            
+            if (id == null || username != payload.Nome)
+                return Results.Unauthorized();
+
+            var result = await service.Do(OngId, payload);
             return (result.IsSuccess, result.Reason) switch
             {
                 (false, "Ong not found") => Results.NotFound(),
                 (false, _) => Results.BadRequest(),
                 (true, _) => Results.Ok(result.Data)
             };
-
         }
         ).RequireAuthorization();
 
         app.MapPatch("match/accept", async (
             [FromServices] AcceptMatchUseCase useCase,
-            [FromBody] AcceptMatchPayload payload) =>
+            [FromBody] AcceptMatchPayload payload,
+            HttpContext http) =>
         {
+            // var id = http.User.FindFirst("id")?.Value;
+            // var match = await 
             var result = await useCase.Do(payload);
             if (result.IsSuccess)
                 return Results.Ok(result.Data);
