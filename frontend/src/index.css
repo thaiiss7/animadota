@@ -2,12 +2,17 @@
 
 /* Aqui fica o style do scrool */
 @layer utilities {
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: #183b64 transparent;
+  }
+
   .scrollbar-custom::-webkit-scrollbar {
     width: 6px;
   }
 
   .scrollbar-custom::-webkit-scrollbar-thumb {
-    background: #183b64;
+    background-color: #183b64;
     border-radius: 999px;
   }
 

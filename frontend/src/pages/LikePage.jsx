@@ -27,6 +27,36 @@ const pets = [
         endereco: "Damn"
     },
     {
+        imagem: dog2,
+        nome: "Dog Marley",
+        descricao: "Cachorro relaxado estilo Bob Marley",
+        tipo: "Cachorro",
+        raca: "Maconha",
+        ong: "OMG",
+        endereco: "Damn"
+    },
+    {
+        imagem: dog2,
+        nome: "Dog Marley",
+        descricao: "Cachorro relaxado estilo Bob Marley",
+        tipo: "Cachorro",
+        raca: "Maconha",
+        ong: "OMG",
+        endereco: "Damn"
+    },
+    {
+        imagem: dog2,
+        nome: "Dog Marley",
+        descricao: "Cachorro relaxado estilo Bob Marley",
+        tipo: "Cachorro",
+        raca: "Maconha",
+        ong: "OMG",
+        endereco: "Damn"
+    }
+];
+
+const matches = [
+    {
         imagem: dog3,
         nome: "Botudo",
         descricao: "Cachorro engraçado e estiloso",
@@ -56,16 +86,40 @@ export const LikePage = () => {
 
                 <SideBar />
 
-                <section className="flex-1 flex items-center justify-center bg-blue-100 gap-10 flex-wrap">
+                <section className="flex-1 flex items-center justify-center bg-blue-100 gap-4">
 
-                    <div className="w-[50vw] h-[90vh] bg-[#183b64] rounded-3xl grid grid-cols-2 gap2 overflow-y-scroll">
+                    {/* LIKES */}
+                    <div className="w-[40vw] h-[85vh] bg-[#21528A] rounded-3xl flex flex-col overflow-hidden  hover:shadow-[0_0_50px_rgba(33,82,138,1)] transition-all">
 
-                        {pets.map((pet, index) => (
-                            <LikeDogsCard
-                                key={index}
-                                pet={pet}
-                            />
-                        ))}
+                        <h1 className="text-white p-4 font-bold">
+                            Likes
+                        </h1>
+
+                        <div className="flex-1 grid grid-cols-2 gap-2 overflow-y-scroll scrollbar-custom auto-rows-max p-3 ml-6">
+
+                            {pets.map((pet, index) => (
+                                <LikeDogsCard key={index} pet={pet} />
+                            ))}
+
+                        </div>
+
+                    </div>
+
+                    {/* MATCHES */}
+                    <div className="w-[40vw] h-[85vh] bg-[#21528A] rounded-3xl flex flex-col overflow-hidden  hover:shadow-[0_0_50px_rgba(33,82,138,1)] transition-all">
+
+                        <h1 className="text-white p-4 font-bold">
+                            Matches
+                        </h1>
+
+                        <div className="flex-1 grid grid-cols-2 gap-2 overflow-y-scroll scrollbar-custom auto-rows-max p-3 ml-6">
+
+                            {matches.map((pet, index) => (
+                                <LikeDogsCard key={index} pet={pet} />
+                            ))}
+
+                        </div>
+
                     </div>
 
                 </section>

@@ -75,7 +75,6 @@ export const RegisterModal = ({ onChangeView }) => {
 
             </div>
 
-            {/* 👇 aqui está o FIX */}
             <button
                 className="bg-[#183b64] px-6 py-2 rounded-2xl"
                 onClick={onChangeView}
