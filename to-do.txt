@@ -44,7 +44,8 @@ use cases:
     * editUser - feito
     * getUser - feito
 
-    * auth
+    * auth - feito
+    * authOng
 
     * createUserFoto
     * deleteUserFoto
