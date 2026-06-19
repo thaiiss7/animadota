@@ -40,6 +40,7 @@ public static class PetEndpoints
                     Tipo = payload.Tipo,
                     Raca = payload.Raca,
                     OngId = payload.OngId,
+                    Ong = payload.Ong,
                     UrlFoto = payload.UrlFoto,
                     Bio = payload.Bio,
                     Idade = payload.Idade
@@ -51,7 +52,7 @@ public static class PetEndpoints
                 return Results.BadRequest(result.Reason);
             });
 
-            // deletar pet
+        // deletar bichito
         app.MapDelete("pet/{id}", async (
             Guid petId, 
             HttpContext http,

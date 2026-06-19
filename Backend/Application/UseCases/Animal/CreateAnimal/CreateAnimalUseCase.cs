@@ -27,6 +27,7 @@ public class CreateAnimalUseCase
             },
             Raca = payload.Raca,
             OngId = payload.OngId,
+            Ong = payload.Ong,
             Bio = payload.Bio,
             Idade = payload.Idade
         };
