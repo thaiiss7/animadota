@@ -2,7 +2,7 @@ namespace Animadota.Services.AnimalFotos;
 
 public interface IPhotoPetService
 {
-    Task<Guid> Create(AnimalFoto foto, Animal pet);
+    Task<AnimalFoto> Create(string url, Guid petId);
     Task Delete(AnimalFoto foto, Animal pet);
     Task<AnimalFoto> GetById(Guid fotoId);
 }

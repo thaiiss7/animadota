@@ -18,14 +18,8 @@ public class CreateAnimalFotoUseCase
         if(pet is null)
             return Result<CreateAnimalFotoResponse>.Fail("Pet not found");
 
-        var foto = new AnimalFoto
-        {
-            Url = payload.Url,
-            Animal = pet,
-            AnimalId = payload.AnimalId
-        };
 
-        await photoPetService.Create(foto, pet);
-        return Result<CreateAnimalFotoResponse>.Success(new(foto.Id));
+        var photo = await photoPetService.Create(payload.Url, payload.AnimalId);
+        return Result<CreateAnimalFotoResponse>.Success(new(photo.Id));
     }
 }

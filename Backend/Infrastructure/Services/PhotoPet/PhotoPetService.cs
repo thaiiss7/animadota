@@ -4,13 +4,20 @@ using Microsoft.EntityFrameworkCore;
 
 public class PhotoPetService(AnimadotaContext ctx) : IPhotoPetService
 {
-    public async Task<Guid> Create(AnimalFoto foto, Animal pet)
+    public async Task<AnimalFoto> Create(string url, Guid petId)
     {
+        var pet = await ctx.Animais.FindAsync(petId);
+        if(pet is null)
+            return null;
+        var foto = new AnimalFoto
+        {
+            Url = url,
+            AnimalId = petId,
+            Animal = pet
+        };
         ctx.AnimalFotos.Add(foto);
-        pet.Fotos.Add(foto);
         await ctx.SaveChangesAsync();
-
-        return foto.Id;
+        return foto;
     }
 
     public async Task Delete(AnimalFoto foto, Animal pet)
