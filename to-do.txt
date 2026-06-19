@@ -5,6 +5,7 @@ use cases:
 * get pet - feito
 * get user - feito
 * editar user - feito
+* editar pet
 
 * editar ong - feito
 * curtir pet - feito
@@ -22,9 +23,9 @@ use cases:
 * hash - feito
 
 * endpoints
-    * createAnimal
+    * createAnimal - feito
     * deleteAnimal
-    * getAnimal
+    * getAnimal - feito
 
     * createAnimalFoto
     * deleteAnimalFoto
