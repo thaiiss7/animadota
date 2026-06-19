@@ -25,7 +25,11 @@ public class GetUserUserCase
             user.Idade,
             user.Bio,
             user.Residencia,
-            user.Telefone
+            user.Telefone,
+            from photo in user.Fotos
+            select new PhotoDTO(
+                photo.Url
+            )
         );
 
         return Result<GetUserResponse>.Success(response);

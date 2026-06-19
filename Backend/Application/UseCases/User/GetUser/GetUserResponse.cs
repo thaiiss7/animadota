@@ -9,5 +9,11 @@ public record GetUserResponse
     int Idade,
     string Bio,
     string Residencia,
-    string Telefone
+    string Telefone,
+    IEnumerable<PhotoDTO> Fotos
+);
+
+public record PhotoDTO
+(
+    string Url
 );
