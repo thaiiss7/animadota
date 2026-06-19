@@ -31,6 +31,6 @@ public class CreateUserUseCase
             return Result<CreateUserResponse>.Fail("Failed to create user photo");
 
         createdUser.Fotos.Add(photo);
-        return Result<CreateUserResponse>.Success(new(user.Username, photo.Url));
+        return Result<CreateUserResponse>.Success(new(user.Username));
     }
 }
