@@ -19,12 +19,12 @@ public class OngLoginUseCase(
             .Compare(payload.Password, ong.Senha);
 
         if(!passwordMatch)
-            return Result<LoginResponse>.Fail("Invalid username or password");
+            return Result<OngLoginResponse>.Fail("Invalid username or password");
 
         var jwt = jwtService.GenerateToken(new(
-            user.Id, user.Username
+            ong.Id, ong.Nome
         ));
 
-        return Result<LoginResponse>.Success(new(jwt));
+        return Result<OngLoginResponse>.Success(new(jwt));
     }
 }

@@ -4,5 +4,6 @@ public record EditOngPayload(
     Guid Id,
     string? Nome,
     string? Endereco,
-    string? Telefone
+    string? Telefone,
+    string Password
 );
