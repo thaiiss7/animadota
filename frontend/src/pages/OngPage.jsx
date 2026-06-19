@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { OngHeader } from "../components/OngHeader";
 import { OngSideBar } from "../components/OngSideBar";
 
@@ -13,7 +16,7 @@ const pets = [
         nome: "Pirulito",
         descricao: "Cachorro que come pirulito pirimpimpim muito carinhoso manhoso e engraçado",
         tipo: "Cachorro",
-        raca: "pirulito",
+        raca: "Caramelo",
         ong: "Save",
         endereco: "Corpus Crist",
         status: false,
@@ -24,7 +27,7 @@ const pets = [
         nome: "Dog Marley",
         descricao: "cachorro relaxado estilo bob marley",
         tipo: "Cachorro",
-        raca: "Maconha",
+        raca: "Pug",
         ong: "Omg",
         endereco: "Damn",
         status: false,
@@ -35,7 +38,7 @@ const pets = [
         nome: "Botudo",
         descricao: "cachorro engraçado e estiloso",
         tipo: "Cachorro",
-        raca: "bota",
+        raca: "Caramelo",
         ong: "Botina",
         endereco: "CIC",
         status: true,
@@ -46,7 +49,7 @@ const pets = [
         nome: "Doginstein",
         descricao: "cachorro genial e divertido",
         tipo: "Cachorro",
-        raca: "inteligente",
+        raca: "Caramelo",
         ong: "Genio",
         endereco: "Av. Platao",
         status: true,
@@ -57,7 +60,7 @@ const pets = [
         nome: "Neymar",
         descricao: "cachorro caneteiro caidor",
         tipo: "Cachorro",
-        raca: "Jogador",
+        raca: "Caramelo",
         ong: "FIFA",
         endereco: "Av. Cai Cai",
         status: false,
@@ -66,6 +69,19 @@ const pets = [
 ];
 
 export const OngPage = () => {
+
+    const navigate = useNavigate();
+
+    const [foto, setFoto] = useState(null);
+
+    const handleFoto = (e) => {
+        const arquivo = e.target.files[0];
+
+        if (arquivo) {
+            setFoto(URL.createObjectURL(arquivo));
+        }
+    };
+
     return(
         <>
             <main className="w-full h-screen bg-[#f5f7fb]">
@@ -115,7 +131,7 @@ export const OngPage = () => {
                                         </h1>
                                     </section>
 
-                                    <section className="h-28 flex flex-col justify-between p-3 bg-amber-500 rounded-xl">
+                                    <section className="h-28 flex flex-col justify-between p-3 bg-amber-500 rounded-xl" onClick={() => navigate("/request")}>
                                         <h1 className="text-sm font-medium">
                                             Solicitações
                                         </h1>
@@ -201,16 +217,89 @@ export const OngPage = () => {
                         {/* segundo card */}
                         <section className="w-[52%] h-[75vh] bg-[#21528A] rounded-3xl flex flex-col p-4 hover:shadow-[0_0_50px_rgba(33,82,138,1)] transition-all">
 
-                            <div className="h-full flex flex-col gap-4">
+                            <div className="h-full w-full flex flex-col gap-2">
                                             
                                 <h1>Cadastrar Animal:</h1>
                                 
-                                <section>
+                                <section className="w-full">
                                     <h1>Nome do Animal</h1>
 
-                                    <input type="text" placeholder=""/>
+                                    <input type="text" placeholder="" className="bg-[#BFDBFE4D] w-full h-[6vh]"/>
                                 </section>
+
+                                <div className="flex flex-row gap-6">
+
+                                    <section className="flex flex-col gap-2 flex-1">
+
+                                        <section>
+                                            <h1>Espécie</h1>
+                                            <input
+                                                type="text"
+                                                className="bg-[#BFDBFE4D] h-[4vh] w-full"
+                                            />
+                                        </section>
+
+                                        <section>
+                                            <h1>Raça</h1>
+                                            <input
+                                                type="text"
+                                                className="bg-[#BFDBFE4D] h-[4vh] w-full"
+                                            />
+                                        </section>
+
+                                        <section>
+                                            <h1>Idade</h1>
+                                            <input
+                                                type="text"
+                                                className="bg-[#BFDBFE4D] h-[4vh] w-full"
+                                            />
+                                        </section>
+
+                                    </section>
+
+                                    <section>
+                                        <h1>Foto do Animal</h1>
+
+                                        <label className="w-50 h-35 cursor-pointer block">
+                                            <input
+                                                type="file"
+                                                accept="image/*"
+                                                className="hidden"
+                                                onChange={handleFoto}
+                                            />
+
+                                            {foto ? (
+                                                <img
+                                                    src={foto}
+                                                    alt="Preview"
+                                                    className="w-full h-full object-cover rounded-xl"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-[#BFDBFE4D] border-2 border-dashed border-[#BFDBFE99] rounded-xl flex items-center justify-center">
+                                                    Adicionar Foto
+                                                </div>
+                                            )}
+                                        </label>
+                                    </section>
+
+                                </div>
+
+                                <section>
+                                    <h1>Bio</h1>
+
+                                    <input type="text" placeholder="" className="bg-[#BFDBFE4D] w-full h-[12vh]"/>
+                                </section>
+
+                                <section className="w-full flex items-center justify-center mt-3">
+
+                                    <button className="p-2 bg-[#183b64] w-[30%] rounded-2xl">
+                                        Salvar
+                                    </button>
+
+                                </section>
+
                             </div>
+
 
                         </section>
 

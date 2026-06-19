@@ -50,15 +50,11 @@ const pets = [
 ];
 
 export const MainPage = () => {
+    const navigate = useNavigate();
 
     const [indice, setIndice] = useState(0);
     const [direcao, setDirecao] = useState("");
     const [petsCurtidos, setPetsCurtidos] = useState([]);
-
-    // DEBUG: ver curtidos
-    useEffect(() => {
-        console.log("🐶 Pets curtidos:", petsCurtidos);
-    }, [petsCurtidos]);
 
     const proximoPet = (lado) => {
         console.log("Click:", lado);

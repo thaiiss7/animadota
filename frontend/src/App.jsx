@@ -4,6 +4,7 @@ import { UserPage } from "./pages/UserPage"
 import { Login } from "./pages/Login"
 import { LikePage } from "./pages/LikePage"
 import { OngPage } from "./pages/OngPage"
+import { Request } from "./pages/RequestPage"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/main" element={<MainPage />}/>
         <Route path="/user" element={<UserPage />}/>
         <Route path="/likePage" element={<LikePage />}/>
+        <Route path="/request" element={<Request />}/>
 
       </Routes>
 

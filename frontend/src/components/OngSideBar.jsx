@@ -1,3 +1,4 @@
+import request from "../assets/request.png"
 import user from "../assets/user-icon.png"
 import heart from "../assets/heart.png"
 import logOff from "../assets/sign-out.png"
@@ -14,18 +15,12 @@ export const OngSideBar = () => {
             <section className="h-full flex flex-col mt-5 gap-8">
 
                 <img
-                    src={user}
-                    onClick={() => navigate("/user")}
+                    src={request}
+                    onClick={() => navigate("/request")}
                     alt=""
-                    className="w-10 cursor-pointer hover:scale-110 transition"
+                    className="w-9 cursor-pointer hover:scale-110 transition self-center ml-1"
                 />
 
-                <img
-                    src={heart}
-                    onClick={() => navigate("/likePage")}
-                    alt=""
-                    className="w-10 cursor-pointer hover:scale-110 transition"
-                />
                 <img
                     src={logOff}
                     onClick={() => navigate("/")}
