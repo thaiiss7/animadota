@@ -1,12 +1,12 @@
 using Animadota.Results;
 using Animadota.Services.Users;
-using Microsoft.VisualBasic;
 
 namespace Animadota.UseCases.CreateUser;
 
 public class CreateUserUseCase
 (
-    IUserService userService
+    IUserService userService,
+    IPhotoUserService userPhotoService
 )
 {
     public async Task<Result<CreateUserResponse>> Do(CreateUserPayload payload)
@@ -24,8 +24,13 @@ public class CreateUserUseCase
             Telefone = payload.Telefone
         };
 
-        await userService.Create(user);
+        var createdUser = await userService.Create(user);
 
-        return Result<CreateUserResponse>.Success(new(user.Username));
+        var photo = await userPhotoService.Create(payload.UrlFoto, createdUser.Id);
+        if (photo == null)
+            return Result<CreateUserResponse>.Fail("Failed to create user photo");
+
+        createdUser.Fotos.Add(photo);
+        return Result<CreateUserResponse>.Success(new(user.Username, photo.Url));
     }
 }

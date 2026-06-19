@@ -4,14 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 public class UserService(AnimadotaContext ctx) : IUserService
 {
-    public async Task<string> Create(Usuario user)
+    public async Task<Usuario> Create(Usuario user)
     {
         ctx.Usuarios.Add(user);
         await ctx.SaveChangesAsync();
-        return user.Username;
+        return user;
     }
-
-<<<<<<< HEAD
     public async Task<Guid?> DeleteUserByUsername(string username)
     {
         var user = await GetUserByUsername(username);
@@ -20,21 +18,17 @@ public class UserService(AnimadotaContext ctx) : IUserService
         ctx.Usuarios.Remove(user);
         await ctx.SaveChangesAsync();
         return user.Id;
-=======
+    }
+
     public async Task<string> EditUserData(Usuario user)
     {
         await ctx.SaveChangesAsync();
         return user.Username;
->>>>>>> a250188b3d8d4f7fae07a220945717c32cd2d792
     }
 
-    public async Task<Usuario?> GetUserByUsername(Guid id)
+    public async Task<Usuario?> GetUserByUsername(string username)
     {
-        return await ctx.Usuarios.FirstOrDefaultAsync(u => u.Id == id);
+        return await ctx.Usuarios.FirstOrDefaultAsync(u => u.Username == username);
     }
 
-    public Task<Usuario?> GetUserByUsername(string username)
-    {
-        throw new NotImplementedException();
-    }
 }
