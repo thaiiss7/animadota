@@ -1,4 +1,4 @@
-using Animadota.Results;
+using Animadota.Common.Results;
 using Animadota.Services.AnimalFotos;
 using Animadota.Services.Pets;
 

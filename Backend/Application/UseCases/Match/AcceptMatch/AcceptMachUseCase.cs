@@ -1,5 +1,5 @@
 using Animadota.Application.Interfaces;
-using Animadota.Results;
+using Animadota.Common.Results;
 
 public class AcceptMatchUseCase(
     ICombinacaoService combinacaoService
