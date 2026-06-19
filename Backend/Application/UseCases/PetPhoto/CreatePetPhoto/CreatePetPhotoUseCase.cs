@@ -1,9 +1,8 @@
-using System.ComponentModel.DataAnnotations;
 using Animadota.Results;
 using Animadota.Services.AnimalFotos;
 using Animadota.Services.Pets;
 
-namespace Animadota.UseCases.CreateAnimalFoto;
+namespace Animadota.UseCases.CreatePetPhoto;
 
 public class CreateAnimalFotoUseCase
 (
@@ -11,15 +10,15 @@ public class CreateAnimalFotoUseCase
     IPetService petService
 )
 {
-    public async Task<Result<CreateAnimalFotoResponse>> Do(CreateAnimalFotoPayload payload)
+    public async Task<Result<CreatePetPhotoResponse>> Do(CreatePetPhotoPayload payload)
     {
         var pet = await petService.GetPetById(payload.AnimalId);
 
         if(pet is null)
-            return Result<CreateAnimalFotoResponse>.Fail("Pet not found");
+            return Result<CreatePetPhotoResponse>.Fail("Pet not found");
 
 
         var photo = await photoPetService.Create(payload.Url, payload.AnimalId);
-        return Result<CreateAnimalFotoResponse>.Success(new(photo.Id));
+        return Result<CreatePetPhotoResponse>.Success(new(photo.Id));
     }
 }

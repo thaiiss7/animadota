@@ -14,11 +14,38 @@ use cases:
 * delete pet - feito
 
 - ultimo dia:
-* fazer usecases das fotos
+* fazer usecases das fotos - feito
     - animal
     - foto
-* adicionar urls e listas no usecases já feitos
-* auth
-* hash
+* adicionar urls e listas no usecases já feitos - feito
+* auth - feito
+* hash - feito
+
 * endpoints
+    * createAnimal
+    * deleteAnimal
+    * getAnimal
+
+    * createAnimalFoto
+    * deleteAnimalFoto
+
+    * acceptMatch
+    * rejectMatch
+    * sendLike
+
+    * createOng
+    * deleteOng
+    * editOng
+    * getOng
+
+    * createUser
+    * deleteUser
+    * editUser
+    * getUser
+
+    * auth
+
+    * createUserFoto
+    * deleteUserFoto
+
 * conectar front
