@@ -3,6 +3,7 @@ import { MainPage } from "./pages/MainPage"
 import { UserPage } from "./pages/UserPage"
 import { Login } from "./pages/Login"
 import { LikePage } from "./pages/LikePage"
+import { OngPage } from "./pages/OngPage"
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Login/>}/>
+        <Route path="/ong" element={<OngPage/>}/>
         <Route path="/main" element={<MainPage />}/>
         <Route path="/user" element={<UserPage />}/>
         <Route path="/likePage" element={<LikePage />}/>
