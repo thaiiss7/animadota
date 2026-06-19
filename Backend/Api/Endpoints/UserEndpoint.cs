@@ -1,6 +1,8 @@
+using System.Security.Claims;
 using Animadota.UseCases.CreateUser;
 using Animadota.UseCases.GetUser;
 using Microsoft.AspNetCore.Mvc;
+using static System.Net.WebRequestMethods;
 
 namespace Animadota.Endpoints;
 
@@ -42,7 +44,31 @@ public static class UserEndpoints
         {
             var payload = new DeleteUserPayload(username);
             var result = await useCase.Do(payload);
-            
-        })
+
+            return (result.IsSuccess, result.Reason) switch
+            {
+                (false, "User not found") => Results.NotFound(),
+                (false, _) => Results.BadRequest(),
+                (true, _) => Results.Ok()
+            };
+        }).RequireAuthorization();
+
+        app.MapPost("like/", async (
+            [FromBody] SendLikePayload payload,
+            [FromServices] SendLikeUseCase useCase,
+            HttpContext http ) =>
+        {
+           var claim = http.User.FindFirst(ClaimTypes.NameIdentifier); 
+           var userId = Guid.Parse(claim.Value);
+
+           var result = await useCase.Do(payload with { UserId = userId });
+
+           return (result.IsSuccess, result.Reason) switch
+           {
+               (false, "Pet not found") => Results.NotFound(),
+               (false, _) => Results.BadRequest(),
+               (true, _) => Results.Ok()
+           };
+        }).RequireAuthorization();
     }
 }
