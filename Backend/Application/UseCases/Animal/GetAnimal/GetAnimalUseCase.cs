@@ -28,7 +28,12 @@ public class GetAnimalUseCase
             pet.Idade,
             pet.Bio,
             ong.Nome,
-            ong.Endereco
+            ong.Endereco,
+            from p in pet.Fotos
+            select new PhotoData
+            (
+                p.Url
+            )
         );
 
         return Result<GetAnimalResponse>.Success(response);
