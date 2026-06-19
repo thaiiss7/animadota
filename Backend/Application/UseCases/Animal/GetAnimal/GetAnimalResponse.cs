@@ -8,5 +8,10 @@ public record GetAnimalResponse
     int Idade,
     string Bio,
     string NomeOng,
-    string EnderecoOng
+    string EnderecoOng,
+    IEnumerable<PhotoData> Photos
+);
+
+public record PhotoData(
+    string Url
 );
