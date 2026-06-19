@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using Animadota.UseCases.CreateUser;
+using Animadota.UseCases.EditUser;
 using Animadota.UseCases.GetUser;
 using Microsoft.AspNetCore.Mvc;
 using static System.Net.WebRequestMethods;
@@ -36,6 +37,24 @@ public static class UserEndpoints
             
             return Results.BadRequest(result.Reason);
         });
+
+        app.MapPut("profile/edit", async (
+            [FromBody] EditUserPayload payload,
+            [FromServices] EditUserUseCase service,
+            HttpContext http) =>
+        {
+            var claim = http.User.FindFirst(ClaimTypes.Name);
+            var username = claim?.Value;
+            var result = await service.Do(payload with { Username = username });
+
+            return (result.IsSuccess, result.Reason) switch
+            {
+                (false, "User not found") => Results.NotFound(),
+                (false, _) => Results.BadRequest(),
+                (true, _) => Results.Ok(result.Data)
+            };
+        }).RequireAuthorization();
+
 
         app.MapDelete("profile/{username}", async (
             string username,

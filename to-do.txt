@@ -30,19 +30,19 @@ use cases:
     * createAnimalFoto
     * deleteAnimalFoto
 
-    * acceptMatch
-    * rejectMatch
-    * sendLike
+    * acceptMatch - feito
+    * rejectMatch - feito
+    * sendLike - feito
 
-    * createOng
-    * deleteOng
-    * editOng
-    * getOng
+    * createOng - feito
+    * deleteOng - feito
+    * editOng - feito
+    * getOng - feito
 
-    * createUser
-    * deleteUser
-    * editUser
-    * getUser
+    * createUser - feito
+    * deleteUser - feito
+    * editUser - feito
+    * getUser - feito
 
     * auth
 

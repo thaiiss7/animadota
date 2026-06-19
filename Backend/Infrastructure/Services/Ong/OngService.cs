@@ -46,5 +46,9 @@ public class OngService(AnimadotaContext context) : IOngService
         return ong.Id;
     }
 
-
+    public Task<Ong?> GetOngByName(string name)
+    {
+        var ong = context.Ongs.FirstOrDefaultAsync(ong => ong.Nome == name);
+        return ong;
+    }
 }
