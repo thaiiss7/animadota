@@ -6,7 +6,7 @@ public class EditOngUseCase (
     IOngService ongService
 )
 {
-    public async Task<Result<EditOngResponse>> Do(EditOngPayload payload)
+    public async Task<Result<EditOngResponse>> Do(Guid ongId, EditOngPayload payload)
     {
         var ong = await ongService.EditOng(payload.Id, payload);
         if (ong == null)

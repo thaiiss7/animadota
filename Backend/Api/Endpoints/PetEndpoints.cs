@@ -1,4 +1,6 @@
+using System.Security.Claims;
 using Animadota.UseCases.CreateAnimal;
+using Animadota.UseCases.EditAnimal;
 using Animadota.UseCases.GetAnimal;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,17 +32,13 @@ public static class PetEndpoints
             HttpContext http,
             [FromBody] CreateAnimalPayload payload,
             [FromServices] CreateAnimalUseCase useCase) =>
-            {
-                // var claim = http.User.FindFirst(ClaimTypes.NameIdentifier);
-                // var userId = Guid.Parse(claim.Value);    
+            {  
 
                 var result = await useCase.Do(new CreateAnimalPayload
                 {
                     Nome = payload.Nome,
                     Tipo = payload.Tipo,
                     Raca = payload.Raca,
-                    OngId = payload.OngId,
-                    Ong = payload.Ong,
                     UrlFoto = payload.UrlFoto,
                     Bio = payload.Bio,
                     Idade = payload.Idade
@@ -51,6 +49,29 @@ public static class PetEndpoints
             
                 return Results.BadRequest(result.Reason);
             });
+
+        // editar bichito
+        app.MapPut("/edit/{id}", async (
+            Guid id,
+            HttpContext http,
+            [FromBody] EditAnimalPayload payload,
+            [FromServices] EditAnimalUseCase useCase) =>
+            {
+                var username = http.User.FindFirst("username")?.Value;
+
+                var result = await useCase.Do(id, payload);
+
+                if (payload.Nome != username)
+                    return Results.Forbid();
+                
+                return (result.IsSuccess, result.Reason) switch
+                {
+                    (false, "Pet not found") => Results.NotFound(),
+                    (false, _) => Results.BadRequest(),
+                    (true, _) => Results.Ok()
+                };
+
+            }).RequireAuthorization();
 
         // deletar bichito
         app.MapDelete("pet/{id}", async (

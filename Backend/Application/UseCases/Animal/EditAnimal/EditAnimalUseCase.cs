@@ -11,9 +11,9 @@ public class EditAnimalUseCase
     IOngService ongService
 )
 {
-    public async Task<Result<EditAnimalResponse>> Do(EditAnimalPayload payload)
+    public async Task<Result<EditAnimalResponse>> Do(Guid petId,EditAnimalPayload payload)
     {
-        var pet = await petService.GetPetById(payload.PetId);
+        var pet = await petService.GetPetById(petId);
 
         if(pet is null)
             return Result<EditAnimalResponse>.Fail("Pet not found");

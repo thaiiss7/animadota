@@ -6,7 +6,6 @@ public record CreateAnimalPayload
     public string Tipo { get; init; }
     public string Raca { get; init; }
     public Guid OngId { get; init; }
-    public Ong Ong { get; init; }
     public string UrlFoto { get; init; }
     public string Bio { get; init; }
     public int Idade { get; init; }

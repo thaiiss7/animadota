@@ -1,5 +1,6 @@
 using Animadota.Common.Results;
 using Animadota.Services.AnimalFotos;
+using Animadota.Services.Ongs;
 using Animadota.Services.Pets;
 
 namespace Animadota.UseCases.CreateAnimal;
@@ -7,12 +8,16 @@ namespace Animadota.UseCases.CreateAnimal;
 public class CreateAnimalUseCase
 (
     IPetService petService,
-    IPhotoPetService photoPetService
+    IPhotoPetService photoPetService,
+    IOngService ongService
 )
 {
     public async Task<Result<CreateAnimalResponse>> Do(CreateAnimalPayload payload)
     {
+        var ong = await ongService.GetOngById(payload.OngId);
 
+        if (ong is null)
+            return Result<CreateAnimalResponse>.Fail("Ong not found");
 
         var pet = new Animal
         {
@@ -27,7 +32,7 @@ public class CreateAnimalUseCase
             },
             Raca = payload.Raca,
             OngId = payload.OngId,
-            Ong = payload.Ong,
+            Ong = ong,
             Bio = payload.Bio,
             Idade = payload.Idade
         };
