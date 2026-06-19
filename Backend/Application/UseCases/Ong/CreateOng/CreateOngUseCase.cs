@@ -15,7 +15,8 @@ public class CreateOngUseCase
             Nome = payload.Nome,
             Id = payload.Id,
             Endereco = payload.Endereco,
-            Telefone = payload.Telefone
+            Telefone = payload.Telefone,
+            Senha = payload.Password
         };
         
         await ongService.Create(ong);

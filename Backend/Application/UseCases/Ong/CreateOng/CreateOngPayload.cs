@@ -6,4 +6,5 @@ public record CreateOngPayload
     public Guid Id { get; init;}
     public string Endereco { get; init;}
     public string Telefone { get; init;}
+    public string Password { get; init;}
 }

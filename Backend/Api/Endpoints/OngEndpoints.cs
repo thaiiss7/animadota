@@ -49,7 +49,7 @@ public static class OngEndpoints
             [FromBody] EditOngPayload payload,
             [FromServices] EditOngUseCase service) =>
         {
-            var result = await service.Do(new EditOngPayload(id, payload.Nome, payload.Endereco, payload.Telefone));
+            var result = await service.Do(id, payload);
             return (result.IsSuccess, result.Reason) switch
             {
                 (false, "Ong not found") => Results.NotFound(),
