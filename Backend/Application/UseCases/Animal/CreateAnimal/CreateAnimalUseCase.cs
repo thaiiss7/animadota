@@ -12,10 +12,19 @@ public class CreateAnimalUseCase
 {
     public async Task<Result<CreateAnimalResponse>> Do(CreateAnimalPayload payload)
     {
+
+
         var pet = new Animal
         {
             Nome = payload.Nome,
-            Tipo = payload.Tipo,
+            Tipo = payload.Tipo switch
+            {
+                "Cachorro" => TipoPetEnum.Cachorro,
+                "Gato" => TipoPetEnum.Gato,
+                "Pato" => TipoPetEnum.Pato,
+                "Raposa" => TipoPetEnum.Raposa,
+                _ => throw new ArgumentException("Invalid")
+            },
             Raca = payload.Raca,
             OngId = payload.OngId,
             Bio = payload.Bio,
