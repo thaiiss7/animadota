@@ -9,5 +9,6 @@ public record EditUserPayload
     int Idade,
     string Bio,
     string Residencia,
-    string Telefone
+    string Telefone,
+    string UrlFoto
 );

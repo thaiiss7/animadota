@@ -7,7 +7,6 @@ public class Animal : BaseModel
     public required string Raca {get;set;}
     public required string Bio {get;set;}
     public required int Idade {get;set;}
-    public required string Bio { get; set; }
 
     //================MY-RELATIONS================
     public Ong Ong {get;set;}

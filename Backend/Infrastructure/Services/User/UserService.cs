@@ -18,6 +18,7 @@ public class UserService(AnimadotaContext ctx) : IUserService
         ctx.Usuarios.Remove(user);
         await ctx.SaveChangesAsync();
         return user.Id;
+    }
 
     public async Task<string> EditUserData(Usuario user)
     {
@@ -25,13 +26,9 @@ public class UserService(AnimadotaContext ctx) : IUserService
         return user.Username;
     }
 
-    public async Task<Usuario?> GetUserByUsername(Guid id)
+    public async Task<Usuario?> GetUserByUsername(string username)
     {
-        return await ctx.Usuarios.FirstOrDefaultAsync(u => u.Id == id);
+        return await ctx.Usuarios.FirstOrDefaultAsync(u => u.Username == username);
     }
 
-    public Task<Usuario?> GetUserByUsername(string username)
-    {
-        throw new NotImplementedException();
-    }
 }
