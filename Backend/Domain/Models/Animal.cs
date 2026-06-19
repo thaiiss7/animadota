@@ -9,7 +9,7 @@ public class Animal : BaseModel
     public required int Idade {get;set;}
 
     //================MY-RELATIONS================
-    public Ong Ong {get;set;}
+    public required Ong Ong {get;set;}
     public required Guid OngId {get;set;}
 
     //================RELATIONS================

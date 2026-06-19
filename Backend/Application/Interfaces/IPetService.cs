@@ -6,4 +6,5 @@ public interface IPetService
     Task<Animal?> GetPetById(Guid id);
     Task<Ong> GetOngByPet(Animal pet);
     Task<Guid?> Delete(Guid id);
+    Task<Guid> EditPet(Animal pet);
 }

@@ -19,6 +19,13 @@ public class PetService(AnimadotaContext ctx) : IPetService
         await ctx.SaveChangesAsync();
         return animal.Id;
     }
+
+    public async Task<Guid> EditPet(Animal pet)
+    {
+        await ctx.SaveChangesAsync();
+        return pet.Id;
+    }
+
     public async Task<Ong?> GetOngByPet(Animal pet)
     {
         var ong = await ctx.Ongs
