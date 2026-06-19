@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Animadota.Endpoints;
 
-public static class ProfileEndpoints
+public static class UserEndpoints
 {
     public static void ConfigureProfileEndpoints(this WebApplication app)
     {
@@ -40,6 +40,7 @@ public static class ProfileEndpoints
             HttpContext context,
             [FromServices] DeleteUserUseCase useCase) =>
         {
+            var payload = new DeleteUserPayload(username);
             var result = await useCase.Do(payload);
             
         })
